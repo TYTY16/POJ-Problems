@@ -7,7 +7,7 @@ my $input = <>;
 my @values = split(' ', $input);
 
 if(scalar(@values) != 2){
-	return -1;
+	exit 1;
 } else{
 	$a = $values[0];
 	$b = $values[1];
