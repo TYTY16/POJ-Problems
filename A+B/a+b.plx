@@ -3,6 +3,9 @@
 use strict;
 use warnings;
 
+use strict;
+use warnings;
+
 my $input = <>;
 my @values = split(' ', $input);
 
