@@ -13,7 +13,7 @@ while(my $input = <>){
 		if(($r>0 && $r<99.999) && ($n>0 && $n<=25)){
 			print $r**$n . "\n";
 		} else {
-			return -1;
+			exit 1;
 		}
 	}
 }
