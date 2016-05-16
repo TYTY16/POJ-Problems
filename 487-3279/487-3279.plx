@@ -5,15 +5,18 @@ use warnings;
 
 our %numMap = setMap();
 our %directoryMap = ();
-our $numOfNumsToMap = <>;
+our @inputNums = ();
 
-@inputNums = ();
-if($numOfNumsToMap>0){
-	for(my $i = 0; $i<$numOfNumsToMap; $i++){
-
-	}	
-} else{
+open(INPUTFILE, "<input.txt");
+my(@fileLines) = <INPUTFILE>;
+if(scalar(@fileLines) != ($fileLines[0] + 1)){
 	exit 1;
+} else{
+	foreach(@fileLines){
+		my $number = $_;
+		$number =~ s/[-]//g;
+		print  $number;
+	}
 }
 
 
