@@ -30,11 +30,11 @@ import fileinput
 
 def main():
 	exponentiator = Exponentiator()
-	line = ""
+	
 	newLine = False
 	while not newLine:
 		line = input()
-		if line.strip():
+		if not line.strip():
 			newLine = True
 		else:
 			numbers = line.split(' ')
@@ -49,13 +49,17 @@ class Exponentiator:
 		self.results = []
 
 	def calculate(self, base, exponent):
-		result = base
-		for index in range(int(exponent)):
-			result = result * int(base)
+		result = float(base)
+		for index in range(int(exponent) - 1):
+			result = result * float(base)
 		self.results.append(result)
+
+	def stripTrailingZeros(self, number):
+		numAsString = str(number)
+		return numAsString.rstrip('0').rstrip('.') if '.' in numAsString else numAsString
 
 	def printResults(self):
 		for index in range(len(self.results)):
-			print(results[index])
+			print(self.stripTrailingZeros(self.results[index]))
 
 main()
